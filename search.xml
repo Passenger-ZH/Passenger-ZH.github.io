@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo博客搭建</title>
+    <url>/2020/08/09/Hexo%E5%BB%BA%E7%AB%99/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
+<blockquote>
+<p>8月5号晚，下班之后刚刚看完LPL，无聊之际突然就想到一直说要找时间搭建一个博客。最开始是打算利用我已有的springboot项目搭建一个前端+后端+Mysql的博客，于是立马b站搜索学习了一波，竟然让我了解到有急速搭建个人博客的方法。稍作斟酌选定了使用Hexo来搭建个人博客，立马搞起来！接下来详细记载一下如何从0到1搭建过程，针对Windows哦，Macos和Linux请参照步骤自行研究，差别不大的。</p>
+</blockquote>
+<hr>
+<h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><p>因为Hexo需要使用的支撑技术是Nodejs，所以首先就需要百度下载安装Nodejs咯，贴上入口<a href="http://nodejs.cn/download/">http://nodejs.cn/download/</a> 。安装好之后打开命令行测试一下是否安装成功。键盘win+R，键入cmd然后输入node -v和npm -v出现版本号即为成功咯（ps:最新版的nodejs应该都是有集成npm模块的，但如果出现错误提示npm命令不可用说明你有可能没有安装npm模块或者是npm没有添入环境变量中）  正确如图<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231839.png?token=AQQLAS23UZ4N65UDU4RFZLC7GK3QU">下面就可以准备安装Hexo了，输入 npm install -g hexo-cli   安装好之后同样查看一下是否安装成功，输入hexo -v查看正常情况应该如图所示。<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231840.png?token=AQQLAS3HNO65BVMAEPNYITK7GK3QY">接下来就需要你自己先创建一个空的博客文件夹了（位置随意 你喜欢就好），这个文件夹下面即将放的是你博客的所有文件了，即使你搭建过程除了任何问题只需将文件夹删除即可不会有任何影响。</p>
+<p>下面开始到了最重点的地方，也是我踩的一个巨坑，那就是，一定要确保你的电脑上安装了git！！！接下来会使用到git的cloning命令，所以一定要确保有安装哦！好的，前提说完了我该说说坑的地方在哪了，那就是下载git安装包这里，你会发现官网上提供的下载速度愚蠢至极。那速度几乎等同于0，也就是说想安装git反正成了最难的事情了。经过我长达一个小时的等待，我放弃了，直接选择寻找网盘下载git安装包。建议出现我类似情况的可以斟酌考虑寻找网盘下载资源，如果你有更好更快的方式，快分享给我！！！</p>
+<p>等你的git安装好之后，同样的命令行测试一下是否安装成功，输入git<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231841.png?token=AQQLAS3X2EDO25AVKXYPNBS7GK3Q4">如果出现这么一大长串，证明最需要整活的地方就搞定了，接下来就可以很快弄好了。（ps:记得给你的git配置一下身份哦，命令分别是git config user.name “你的用户名” 和 git config user.email “ 你的邮箱地址”）</p>
+<p>下面继续在命令行中输入Cloning hexo-starter to 之前创建好的博客文件夹地址 （ps:记得使用这个命令之前要确保这个文件夹必须是空的文件夹哦），等待命令执行完之后，进入你的博客文件夹下面查看一下，成功了就会出现像这样的文件<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231842.png?token=AQQLAS3NMEYBBRLN7INIK6S7GK3SK"></p>
+<p>到这里，我们的准备工作终于算是完成告一段落，博客也是搭建起来了，接下来准备进入配置阶段，Come on！</p>
+<h5 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h5><p>进入你的博客文件夹，命令行快捷方式进入该文件夹，<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231843.png?token=AQQLAS4HBWQQNMVTD6JZ7PC7GK3SU">如果你习惯在命令行下使用cd 文件夹路径  也是可以的，同样的效果。接下来，就需要对我们的博客进行初始化了，命令行中继续输入hexo  init  命令执行完之后我们的博客也就初始化成功了，接下来我们就可以启动它然后访问博客看一看折腾了这么半天到底能弄出个啥吧。命令行中继续输入命令hexo s  启动成功如图<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231844.png?token=AQQLASZ7MPR4YUHMN4YWA5K7GK3S2">然后接下来打开浏览器，输入localhost://4000，你就能看到你搭建好的博客咯！</p>
+<p>当然，你现在看到的博客目前的状态是一个最最简陋的样子，接下来我们就需要开始来详细配置一下把博客弄得好看些搞成华丽花哨的样子以此来彰显你是多么厉害，吼吼吼！！</p>
+<h5 id="优化与配置"><a href="#优化与配置" class="headerlink" title="优化与配置"></a>优化与配置</h5><p>进入hexo官方文档网站<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a>  接下来我们第一步就要开始做的事情就是给我们的换一个好看的主题，这是最最最直接有效装饰。点击网站顶部的主题，我们就能够看到有很多各种各样的主题被一些无私的大佬给分享出来了，你可以一个个点进去仔细瞅瞅，选一个你喜欢的。哎，看图吧，详细介绍位置<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231845.png?token=AQQLASZA53O7IZHGMLPODHS7GK3TA">选好之后，点击标题进入git界面，找到这里<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231846.png?token=AQQLAS6SNFM6TJ5FOSGIHJS7GK3TO">复制这行语句，然后在命令行下输入这行命令我们就可以把这个主题给克隆下来拿去使用（ps:也就是白嫖）。克隆完成之后在博客文件夹里的themes文件夹下面，我们就能看到这个主题的文件夹了，是不是非常的简单方便呢。下面我们就需要给博客配置一下这个主题了，在博客文件夹下面找到配置文件_config.yml，打开这个文件，找到其中主题的标志，如图<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811231847.png?token=AQQLAS7IA2DYGIK42324GES7GK3TW"></p>
+<p>待续<del>~</del></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第一个脚印</title>
     <url>/2020/08/05/%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%84%9A%E5%8D%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
@@ -10,7 +35,7 @@
 <hr>
 <h5 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h5><p>目前也有好长时间没有正式的钻研一下编程方面的技术了，细细算下来搁置了都快有长达一年的时间了。虽然上一份ERP工作也会涉及到一些，但工作终究是工作和兴趣是没办法相提并论的。</p>
 <p>现在的工作生活情况终于慢慢趋向稳定，可以花时间做自己想做的事情，学习专研自己感兴趣的技术了。今年还有好多的学习计划都安排上日程，一件件去完成，充电计划flag立起来。吼吼吼！<del>这难道就是你找不到女朋友的借口？</del></p>
-<h5 id="现有"><a href="#现有" class="headerlink" title="现有"></a>现有</h5><p>手头上现有一个“稍微的大项目”，也是我搭建起来的个人网站，目前这一两年差不多全部的技术积累所在，目前还没有开放任何源码没有分享出来，给小玩意儿上图：<img src="../attchment/Image.png" alt="725fac1c2ff0d92d79ccb46e9d14d0a0.png"><br><del>双屏截图竟然这么爽的么哈哈哈</del><br>以Java作为开发语言，Springboot+Thymeleaf+Nodejs搭建的前后端，后面再写博客分享分享源码技术以及踩过的一些坑，然后再就是如何购买云服务器部署网站的坑，顺带说说爬虫的一些基础技术，仔细想想有好多东西啊。<br>后面再花时间详细倒腾，把这个博客迁移到我的个人网站关联在一起 <a href="http://pzhty.ltd/">pzhty.ltd</a>毕竟使用github的免费服务，每次在加载资源的时候真的是慢的离谱。</p>
+<h5 id="现有"><a href="#现有" class="headerlink" title="现有"></a>现有</h5><p>手头上现有一个“稍微的大项目”，也是我搭建起来的个人网站，目前这一两年差不多全部的技术积累所在，目前还没有开放任何源码没有分享出来，给小玩意儿上图：<img src="https://raw.githubusercontent.com/Passenger-ZH/picBed/master/img/20200811230743.png?token=AQQLASYPDTAFR4LCX2UZIRS7GK2H2"><br><del>双屏截图竟然这么爽的么哈哈哈</del><br>以Java作为开发语言，Springboot+Thymeleaf+Nodejs搭建的前后端，后面再写博客分享分享源码技术以及踩过的一些坑，然后再就是如何购买云服务器部署网站的坑，顺带说说爬虫的一些基础技术，仔细想想有好多东西啊。<br>后面再花时间详细倒腾，把这个博客迁移到我的个人网站关联在一起 <a href="http://pzhty.ltd/">pzhty.ltd</a>毕竟使用github的免费服务，每次在加载资源的时候真的是慢的离谱。</p>
 ]]></content>
       <categories>
         <category>记录</category>
